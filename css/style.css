@@ -2,6 +2,11 @@ footer.page-footer {
   margin-top: 0px;
 }
 
-.parallax-container .container {
+#card {
   margin-top: 6%;
+}
+
+#register {
+  margin-left: 44%;
+  margin-right: -100%;
 }

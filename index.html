@@ -29,21 +29,18 @@
     </header>
     <main>
     <div class="parallax-container">
-      <div class="parallax"><img src="img/parallax1.jpg"></div>
-      <div class="container">
+      <div class="parallax"><img src="img/classes.jpg"></div>
+      <div id="card" class="container">
         <div class="row">
           <div class="col s12 m6">
             <div class="card blue">
               <div class="card-content white-text">
-                <span class="card-title">有些事情你沒經歷過是不會知道的..</span>
-                <p>有些老師，你沒上過是不懂他的好</p>
+                <span class="card-title">有些事情...</span>
+                <p>你沒經歷過是不會知道的</p>
+                <p>有些老師...</p> 
+                <p>你沒上過是不會懂他的好</p>
                 <p>為此，也為了學分</p>
                 <p>我們建置了這個網站</p>
-                <p>課評網的目的就是讓好課</p>
-                <p>好老師能有更多人知道</p>
-              </div>
-              <div class="card-action">
-                <a class="waves-effect waves-light btn darken-4" href="#"><i class="mdi-file-cloud left"></i>點我註冊</a>
               </div>
             </div>
           </div>
@@ -52,12 +49,41 @@
     </div>
     <div class="section white">
       <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+        <h2 class="header">課程評論網</h2>
+        <p class="grey-text text-darken-3 lighten-3">
+          是一個除了教學評量外，讓學生私底下給予老師正面評價的地方，在此，學生可以互相討論不同老師所教授的課程，並且可以認識不同系所的教授。
+        </p>
+        <div class="col s12 m6">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="#" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                  This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="#" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                  This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="flow-text center-align">立刻加入所有大同學生都關注的評價網</p>
+          <a id="register" class="waves-effect waves-light btn-large">立即註冊</a>
       </div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="img/parallax2.jpg"></div>
     </div>
     <footer class="page-footer">
       <div class="container">
@@ -91,6 +117,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
     <script>
     $(document).ready(function(){
+      $(".button-collapse").sideNav();
       $('.parallax').parallax();
     });
     </script>
