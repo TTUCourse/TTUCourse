@@ -7,6 +7,8 @@ footer.page-footer {
 }
 
 #register {
-  margin-left: 44%;
-  margin-right: -100%;
+  left : 50%;
+  margin-right: -50%;
+  transform: translate(-50%);
 }
+
