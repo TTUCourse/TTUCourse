@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Teacher extends Model {
+class Course extends Model {
 
 	//
-	protected $table = 'teachers';
+	protected $table = 'courses';
 }
