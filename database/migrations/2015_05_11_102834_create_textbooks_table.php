@@ -14,10 +14,10 @@ class CreateTextbooksTable extends Migration {
 	{
 		Schema::create('textbooks', function(Blueprint $table)
 		{
-			$tabel->string('title');
-			$tabel->string('Author');
-			$tabel->double('Edition', 5, 2);
-			$tabel->string('Publisher');
+			$table->string('title');
+			$table->string('Author');
+			$table->double('Edition', 5, 2);
+			$table->string('Publisher');
 			$table->string('ISBN')->primary();
 		});
 	}
