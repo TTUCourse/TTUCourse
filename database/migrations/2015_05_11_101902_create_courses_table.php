@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration {
 			$table->string('Department');
 			$table->double('Rank', 3, 2);
 			$table->string('Room');
+			$table->string('Textbook');
 		});
 	}
 
