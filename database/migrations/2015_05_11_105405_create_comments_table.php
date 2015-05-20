@@ -14,9 +14,10 @@ class CreateCommentsTable extends Migration {
 	{
 		Schema::create('comments', function(Blueprint $table)
 		{
-			$table->string('Comment_UUID')->primary();
+			$table->increments('Comment_UUID');
 			$table->string('Commenter');
 			$table->string('Content');
+			$table->double('Rank', 3, 2)->default(0.00);
 			$table->timestamps();
 		});
 	}

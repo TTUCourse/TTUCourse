@@ -15,13 +15,17 @@ class CreateInstructsTable extends Migration {
 		Schema::create('instructs', function(Blueprint $table)
 		{
 			$table->integer('Teacher_ID')->unsigned();
+			
 			$table->foreign('Teacher_ID')
-			->references('id')->on('teachers')
-			->onDelete('cascade');
+			      ->references('id')->on('teachers')
+			      ->onDelete('cascade');
+
 			$table->string('Course_No');
+
 			$table->foreign('Course_No')
-			->references('Course_No')->on('courses')
-			->onDelete('cascade');
+			      ->references('Course_No')->on('courses')
+			      ->onDelete('cascade');
+
 			$table->primary(['Teacher_ID', 'Course_No']);
 		});
 	}

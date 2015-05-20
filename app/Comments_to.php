@@ -6,4 +6,6 @@ class Comments_to extends Model {
 
 	//
 	protected $table = 'comments_tos';
+
+	protected $fillable = ['Course_No', 'Comment_UUID'];
 }

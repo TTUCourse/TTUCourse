@@ -6,4 +6,6 @@ class Comment extends Model {
 
 	//
 	protected $table = 'comments';
+
+	protected $fillable = ['Commenter', 'Commenter', 'Content', 'Rank'];
 }
