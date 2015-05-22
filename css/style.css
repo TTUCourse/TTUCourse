@@ -9,6 +9,8 @@ footer.page-footer {
 #register {
   left : 50%;
   margin-right: -50%;
+  -ms-transform: translate(-50%);
+  -webkit-transform: translate(-50%);
   transform: translate(-50%);
 }
 
