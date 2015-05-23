@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8">
     <title>大同課評網</title>
@@ -14,22 +14,32 @@
   <body>
     <header>
       <nav>
-        <a href="#" data-activates="mobile-demo" class="button-collapse fixed"><i class="mdi-navigation-menu"></i></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse fixed"><i class="mdi-navigation-menu"></i></a>
         <div class="container">
           <div class="nav-wrapper">
+            <!-- desktop nav -->
             <a href="#!" class="brand-logo fixed">課評網</a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="#">註冊</a></li>
-              <li><a href="#">登入</a></li>
+              <li><a href="signup.html">註冊</a></li>
+              <li><a href="signin.html">登入</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="#">首頁</a></li>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="#">註冊</a></li>
-                  <li><a href="#">登入</a></li>
+            <!-- mobile nav -->
+            <ul id="nav-mobile" class="side-nav">
+              <li class="logo"><a href="index.html">首頁</a></li>
+              <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
+              <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                    <a class="collapsible-header  waves-effect waves-teal">會員</a>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><a href="signup.hmtl">註冊</a></li>
+                        <li><a href="signin.html">登入</a></li>
+                      </ul>
+                    </div>
+                  </li>
                 </ul>
-              </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -69,7 +79,8 @@
               </div>
               <div class="col s10">
                 <span class="black-text">
-                  This is a square image. Add the "circle" class to it to make it appear circular.
+                  <p>從我開始使用課程評論網之後呢，不只人員變好，學妹也蜂擁而上</p>
+                  <p>真的是太感謝他們了！</p> 
                 </span>
               </div>
             </div>
@@ -79,11 +90,12 @@
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row valign-wrapper">
               <div class="col s2">
-                <img src="#" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                <img src="https://graph.facebook.com/1799543839/picture?width=320&height=320" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
               </div>
               <div class="col s10">
                 <span class="black-text">
-                  This is a square image. Add the "circle" class to it to make it appear circular.
+                  <p>自從有了課程評論網，我的腰不酸，腿也不疼了，大感謝他們。</p>
+                  <p>從此之後，選課有了依據，方便的多多了呢！</p>
                 </span>
               </div>
             </div>
@@ -97,24 +109,22 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">Help us on Github!</h5>
+            <p class="grey-text text-lighten-4">You can help us improve the site on github! <a href="https://github.com/TTUCourse/TTUCourse">TTUCourse</a></p>
+
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
+            <h5 class="white-text">首頁</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.ttu.edu.tw/bin/home.php">大同大學</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://selquery.ttu.edu.tw/Main/ListClass.php">課程資料</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2015 Copyright TTUCourse
         </div>
       </div>
     </footer>
