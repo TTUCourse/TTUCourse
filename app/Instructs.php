@@ -7,5 +7,7 @@ class Instructs extends Model {
 	//
 	protected $table = 'instructs';
 
-	protected $fillable = ['Teacher_ID', 'Course_No'];
+	protected $fillable = ['teacher_id', 'course_no'];
+
+	public $timestamps = false;
 }

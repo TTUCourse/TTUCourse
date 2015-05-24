@@ -7,6 +7,7 @@ class Course extends Model {
 	//
   protected $table = 'courses';
 
-  protected $fillable = ['Course_name', 'Course_No', 'Credit', 'Department', 'Enrollment_limit', 'Department', 'Room', 'Textbook'];
+  protected $fillable = ['course_name', 'course_no', 'credit', 'department', 'enrollment_limit', 'textbook'];
 
+  public $timestamps = false;
 }

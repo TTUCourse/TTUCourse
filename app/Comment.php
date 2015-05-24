@@ -7,5 +7,5 @@ class Comment extends Model {
 	//
 	protected $table = 'comments';
 
-	protected $fillable = ['Commenter', 'Commenter', 'Content', 'Rank'];
+	protected $fillable = ['comment_uuid', 'content', 'rank'];
 }

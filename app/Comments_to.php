@@ -7,5 +7,7 @@ class Comments_to extends Model {
 	//
 	protected $table = 'comments_tos';
 
-	protected $fillable = ['Course_No', 'Comment_UUID'];
+	protected $fillable = ['course_no', 'comment_uuid'];
+
+	public $timestamps = false;
 }

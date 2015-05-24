@@ -14,19 +14,19 @@ class CreateSaysTable extends Migration {
 	{
 		Schema::create('says', function(Blueprint $table)
 		{
-			$table->integer('Comment_UUID')->unsigned();
+			$table->integer('comment_uuid')->unsigned();
 
-			$table->foreign('Comment_UUID')
-			      ->references('Comment_UUID')->on('comments')
+			$table->foreign('comment_uuid')
+			      ->references('comment_uuid')->on('comments')
 			      ->onDelete('cascade');
-			      
+
 			$table->integer('user_id')->unsigned();
 
 			$table->foreign('user_id')
 			      ->references('id')->on('users')
 			      ->onDelete('cascade');
 
-			$table->primary(['Comment_UUID', 'user_id']);
+			$table->primary(['comment_uuid', 'user_id']);
 		});
 	}
 

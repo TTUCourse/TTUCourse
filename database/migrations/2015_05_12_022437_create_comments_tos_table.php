@@ -14,19 +14,19 @@ class CreateCommentsTosTable extends Migration {
 	{
 		Schema::create('comments_tos', function(Blueprint $table)
 		{
-			$table->string('Course_No');
+			$table->string('course_no');
 
-			$table->foreign('Course_No')
-			      ->references('Course_No')->on('courses')
+			$table->foreign('course_no')
+			      ->references('course_no')->on('courses')
 			      ->onDelete('cascade');
 
-			$table->integer('Comment_UUID')->unsigned();
-			
-			$table->foreign('Comment_UUID')
-			      ->references('Comment_UUID')->on('comments')
+			$table->integer('comment_uuid')->unsigned();
+
+			$table->foreign('comment_uuid')
+			      ->references('comment_uuid')->on('comments')
 			      ->onDelete('cascade');
 
-			$table->primary(['Course_No', 'Comment_UUID']);
+			$table->primary(['course_no', 'comment_uuid']);
 		});
 	}
 

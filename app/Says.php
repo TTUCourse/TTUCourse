@@ -7,5 +7,7 @@ class Says extends Model {
 	//
 	protected $table = 'says';
 
-	protected $fillable = ['Comment_UUID', 'user_id'];
+	protected $fillable = ['comment_uuid', 'user_id'];
+
+	public $timestamps = false;
 }

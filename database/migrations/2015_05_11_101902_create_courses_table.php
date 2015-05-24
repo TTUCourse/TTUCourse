@@ -14,13 +14,12 @@ class CreateCoursesTable extends Migration {
 	{
 		Schema::create('courses', function(Blueprint $table)
 		{
-			$table->string('Course_name');
-			$table->string('Course_No')->primary();
-			$table->integer('Credit');
-			$table->integer('Enrollment_limit');
-			$table->string('Department');
-			$table->string('Room');
-			$table->string('Textbook');
+			$table->string('course_name');
+			$table->string('course_No')->primary();
+			$table->integer('credit');
+			$table->integer('enrollment_limit');
+			$table->string('department');
+			$table->string('textbook')->nullable();
 		});
 	}
 

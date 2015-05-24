@@ -4,8 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model {
 
-	//
+    //
   protected $table = 'teachers';
 
-  protected $fillable = ['Name', 'Sex', 'Office', 'Departnemt'];
+  protected $fillable = ['name', 'sex', 'office', 'departnemt'];
+
+  public $timestamps = false;
 }

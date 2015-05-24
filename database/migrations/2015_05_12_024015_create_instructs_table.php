@@ -14,19 +14,19 @@ class CreateInstructsTable extends Migration {
 	{
 		Schema::create('instructs', function(Blueprint $table)
 		{
-			$table->integer('Teacher_ID')->unsigned();
-			
-			$table->foreign('Teacher_ID')
+			$table->integer('teacher_id')->unsigned();
+
+			$table->foreign('teacher_id')
 			      ->references('id')->on('teachers')
 			      ->onDelete('cascade');
 
-			$table->string('Course_No');
+			$table->string('course_no');
 
-			$table->foreign('Course_No')
-			      ->references('Course_No')->on('courses')
+			$table->foreign('course_no')
+			      ->references('course_no')->on('courses')
 			      ->onDelete('cascade');
 
-			$table->primary(['Teacher_ID', 'Course_No']);
+			$table->primary(['teacher_id', 'course_no']);
 		});
 	}
 
