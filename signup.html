@@ -176,6 +176,9 @@
       $(".button-collapse").sideNav();
       $('.parallax').parallax();
       $('select').material_select();
+      $("form input").keypress(function(event){
+        if (event.keyCode == 13) $("action").click();
+      });
     });
     </script>
   </body>
