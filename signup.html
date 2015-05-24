@@ -93,8 +93,14 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input name="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
+              <input name="password" id="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
               <label for="password">密碼</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="password" class="validate" required pattern=".{8,}" title="請再次輸入你的密碼" onchange="this.setCustomValidity(this.value === password.value ? '' : '輸入的密碼與前一次不同！');">
+              <label for="password">確認密碼</label>
             </div>
           </div>
           <div class="row">
