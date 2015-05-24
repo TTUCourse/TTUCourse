@@ -51,18 +51,18 @@
         
       </div>
       <div class="row">
-        <form class="col s12">
+        <form class="col s12" action="" method="POST">
           <div class="row">
             <div class="input-field col offset-m3 m6 s12">
               <i class="mdi-communication-email prefix"></i>
-              <input id="email" type="email" class="validate" required pattern="\w\d+@ms.ttu.edu.tw">
+              <input name="email" type="email" class="validate" required pattern="\w\d\w\d{7,8}@ms.ttu.edu.tw" title="請使用學校信箱">
               <label for="email">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col offset-m3 m6 s12">
               <i class="mdi-action-lock prefix"></i>
-              <input id="password" type="password" class="validate" required>
+              <input name="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
               <label for="password">Password</label>
             </div>
           </div>
