@@ -1,61 +1,52 @@
 @extends('app')
 
+@section('title', '登入')
+
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+<main>
+  <div class="container">
+    <div class="row">
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    </div>
+    <div class="row">
+      <form class="col s12" action="{{ url('/auth/login') }}" method="POST">
+        <div class="row">
+          <div class="input-field col offset-m3 m6 s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input name="email" type="email" class="validate" required pattern="\w\d\w\d{7,8}@ms.ttu.edu.tw" title="請使用學校信箱">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col offset-m3 m6 s12">
+            <i class="mdi-action-lock prefix"></i>
+            <input name="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <div class="col m9 s12">
+            <div class="input-field right">
+              <button class="btn waves-effect waves-light" type="submit" name="action">登入
+                <i class="mdi-content-send right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+@stop
+@section('script')
+<script>
+$(document).ready(function(){
+  $(".button-collapse").sideNav();
+  $('.parallax').parallax();
+  $("form input").keypress(function(event){
+    if (event.keyCode == 13) $("action").submit();
+  });
+});
+</script>
 @endsection

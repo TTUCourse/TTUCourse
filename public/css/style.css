@@ -1,0 +1,25 @@
+footer.page-footer {
+  margin-top: 0px;
+}
+
+#card {
+  margin-top: 6%;
+}
+
+#register {
+  left : 50%;
+  margin-right: -50%;
+  -ms-transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.fixed {
+  margin-left: 2%;
+}
+
+#sex {
+  color: #9e9e9e;
+  font-size: 1rem;
+  cursor: text;
+}

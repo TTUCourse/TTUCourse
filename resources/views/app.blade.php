@@ -1,62 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
-
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
-	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <title>@yield('title') - 大同課評網</title>
+    <meta name="description" content="大同大學課程評價網站">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ url('css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ffa000">
+  </head>
+  <body>
+    <header>
+      <nav class="#ffa000 amber darken-2">
+        <a href="#" data-activates="nav-mobile" class="button-collapse fixed"><i class="mdi-navigation-menu"></i></a>
+        <div class="container">
+          <div class="nav-wrapper">
+            <!-- desktop nav -->
+            <a href="/" class="brand-logo">課評網</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="{{ url('/auth/register') }}">註冊</a></li>
+              <li><a href="{{ url('/auth/login') }}">登入</a></li>
+            </ul>
+            <!-- mobile nav -->
+            <ul id="nav-mobile" class="side-nav">
+              <li class="logo"><a href="{{ url('welcome') }}">首頁</a></li>
+              <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
+              <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                    <a class="collapsible-header  waves-effect waves-teal">會員</a>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><a href="{{ url('/auth/register') }}">註冊</a></li>
+                        <li><a href="{{ url('/auth/login') }}">登入</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
 	@yield('content')
 
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
+    <footer class="page-footer #ff8f00 amber darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Help us on Github!</h5>
+            <p class="grey-text text-lighten-4">You can help us improve the site on github! <a href="https://github.com/TTUCourse/TTUCourse">TTUCourse</a></p>
+
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">首頁</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="http://www.ttu.edu.tw/bin/home.php">大同大學</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://selquery.ttu.edu.tw/Main/ListClass.php">課程資料</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2015 Copyright TTUCourse
+        </div>
+      </div>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="{{ url('js/materialize.min.js') }}"></script>
+    @yield('script')
+  </body>
 </html>
