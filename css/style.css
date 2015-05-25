@@ -23,3 +23,9 @@ footer.page-footer {
   font-size: 1rem;
   cursor: text;
 }
+
+li.avatar {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
