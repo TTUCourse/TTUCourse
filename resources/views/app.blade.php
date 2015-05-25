@@ -26,7 +26,7 @@
             </ul>
             <!-- mobile nav -->
             <ul id="nav-mobile" class="side-nav">
-              <li class="logo"><a href="{{ url('welcome') }}">首頁</a></li>
+              <li class="logo"><a href="/">首頁</a></li>
               <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
