@@ -45,7 +45,7 @@
               <li class="logo"><a href="/">首頁</a></li>
               <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
               @if(Auth::check())
-              <li class="bold"><a href="logout" class="waves-effect waves-teal">登出</a></li>
+              <li class="bold"><a href="{{ url('/auth/logout') }}" class="waves-effect waves-teal">登出</a></li>
               @else
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
