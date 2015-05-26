@@ -11,10 +11,10 @@ class UserController extends Controller {
 	}
 
 	public function getIndex()
-  {
+	{
 
-    return view('user.profile', ['user' => Auth::user()]);
+		return view('user.profile');
 
-  }
+    }
 }
 ?>

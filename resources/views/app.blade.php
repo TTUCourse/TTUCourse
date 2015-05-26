@@ -14,6 +14,14 @@
   </head>
   <body>
     <header>
+      @if(Auth::check())
+      <!-- Dropdown Structure -->
+      <ul id="dropdown" class="dropdown-content">
+        <li><a href="{{ url('/users') }}">個人資料</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('/auth/logout') }}">登出</a></li>
+      </ul>
+      @endif
       <nav class="#ffa000 amber darken-2">
         <a href="#" data-activates="nav-mobile" class="button-collapse fixed"><i class="mdi-navigation-menu"></i></a>
         <div class="container">
@@ -21,13 +29,24 @@
             <!-- desktop nav -->
             <a href="/" class="brand-logo">課評網</a>
             <ul class="right hide-on-med-and-down">
+              @if(Auth::check())
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown">Hi，{{ Auth::user()->nickname }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+              @else
               <li><a href="{{ url('/auth/register') }}">註冊</a></li>
               <li><a href="{{ url('/auth/login') }}">登入</a></li>
+              @endif
             </ul>
             <!-- mobile nav -->
             <ul id="nav-mobile" class="side-nav">
+              @if(Auth::check())
+              <li class="avatar"><a href="profile.html"><img src="http://www.gravatar.com/avatar/{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img center-align"></a></li>
+              @endif
               <li class="logo"><a href="/">首頁</a></li>
               <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
+              @if(Auth::check())
+              <li class="bold"><a href="logout" class="waves-effect waves-teal">登出</a></li>
+              @else
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                   <li class="bold">
@@ -41,6 +60,7 @@
                   </li>
                 </ul>
               </li>
+              @endif
             </ul>
           </div>
         </div>

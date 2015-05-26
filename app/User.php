@@ -31,4 +31,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	public function getGravatarAttribute()
+	{
+		$hash = md5(strtolower(trim($this->attributes['email'])));
+		return $hash;
+	}
 }

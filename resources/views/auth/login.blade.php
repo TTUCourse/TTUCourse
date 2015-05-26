@@ -13,7 +13,7 @@
         <div class="row">
           <div class="input-field col offset-m3 m6 s12">
             <i class="mdi-communication-email prefix"></i>
-            <input name="email" type="email" class="validate" required pattern="\w\d\w\d{7,8}@ms.ttu.edu.tw" title="請使用學校信箱">
+            <input name="email" type="email" class="validate" required pattern="\w\d{7,8}@ms.ttu.edu.tw" title="請使用學校信箱">
             <label for="email">Email</label>
           </div>
         </div>

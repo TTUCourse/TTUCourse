@@ -7,16 +7,22 @@
   <div class="container">
     <div class="row"></div>
     <div class="row">
-      <div class="col m4">
+	  <div class="col m4">
+		@if(count($errors) > 0)
+			@foreach( $errors->all() as $error)
+				{{ $error }}
+			@endforeach
+		@endif
         <p>學校信箱為 <a href="https://mail.google.com/">GMail</a> 信箱，使用方法如下：</p>
         <p>若學號為 410206100</p>
         <p>帳號為：u10206100@ms.ttu.edu.tw</p>
-        <p>（4更換為u、6更換為g、7更換為e、8更換為d）</p>
+          <p>4更換為u、6更換為g</p>
+          <p>7更換為e、8更換為d</p>
         <p>密碼為身分證字號十碼，字母大寫，登入後可改</p>
-        <p>其他資訊請參考學校網站<a href="http://cc.ttu.edu.tw/files/15-1003-22848,c20-1.php">郵件系統</a></p>
-        <p>P.S.另外僑生之密碼與本地生規則不同，請依外交部授號設定）</p>
+          <p>其他資訊請參考<a href="http://cc.ttu.edu.tw/files/15-1003-22848,c20-1.php">學校網站</a></p>
+          <p>P.S.另外僑生之密碼與本地生規則不同，請依外交部授號設定</p>
       </div>
-      <form class="col m8 s12" action="{{ url('/auth/regitster') }}" method="POST">
+      <form class="col m8 s12" action="{{ url('/auth/register') }}" method="POST">
         <div class="row">
           <div class="input-field col s12">
             <input name="email" type="email" class="validate" required pattern="\w\d{7,8}@ms.ttu.edu.tw"  title="請使用學校信箱">
@@ -82,8 +88,8 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input name="nick" type="text" class="validate">
-            <label for="nick">暱稱</label>
+            <input name="nickname" type="text" class="validate">
+            <label for="nickname">暱稱</label>
           </div>
         </div>
         <div class="row">
