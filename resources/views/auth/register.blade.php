@@ -7,12 +7,7 @@
   <div class="container">
     <div class="row"></div>
     <div class="row">
-	  <div class="col m4">
-		@if(count($errors) > 0)
-			@foreach( $errors->all() as $error)
-				{{ $error }}
-			@endforeach
-		@endif
+      <div class="col m4">
         <p>學校信箱為 <a href="https://mail.google.com/">GMail</a> 信箱，使用方法如下：</p>
         <p>若學號為 410206100</p>
         <p>帳號為：u10206100@ms.ttu.edu.tw</p>
@@ -127,6 +122,11 @@ $(document).ready(function(){
   $("form input").keypress(function(event){
     if (event.keyCode == 13) $("action").click();
   });
+  @if(count($errors) > 0)
+    @foreach( $errors->all() as $error)
+      Materialize.toast('{{ $error }}',4000);
+    @endforeach
+  @endif
 });
 </script>
 @endsection
