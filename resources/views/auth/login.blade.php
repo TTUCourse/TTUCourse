@@ -47,6 +47,11 @@ $(document).ready(function(){
   $("form input").keypress(function(event){
     if (event.keyCode == 13) $("action").submit();
   });
+  @if(count($errors) > 0)
+    @foreach( $errors->all() as $error)
+      Materialize.toast('{{ $error }}',4000);
+    @endforeach
+  @endif
 });
 </script>
 @endsection
