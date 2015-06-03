@@ -32,6 +32,6 @@ li.avatar {
 
 [type="checkbox"] + label {
   border-top-style: solid;
-  border-top-width: 5px;
+  border-top-width: 6px;
   border-color: transparent;
 }
