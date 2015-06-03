@@ -29,3 +29,9 @@ li.avatar {
   margin-top: 32px;
   margin-bottom: 47%;
 }
+
+[type="checkbox"] + label {
+  border-top-style: solid;
+  border-top-width: 5px;
+  border-color: transparent;
+}
