@@ -24,7 +24,7 @@ footer.page-footer {
   cursor: text;
 }
 
-li.avatar {
+#nav-mobile > li.avatar {
   text-align: center;
   margin-top: 32px;
   margin-bottom: 47%;
