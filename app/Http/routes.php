@@ -21,3 +21,5 @@ Route::controllers([
 ]);
 
 Route::controller('users', 'UserController');
+Route::get('course/{courseId}', 'CourseController@getCourse');
+?>

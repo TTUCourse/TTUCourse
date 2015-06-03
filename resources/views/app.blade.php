@@ -17,7 +17,7 @@
       @if(Auth::check())
       <!-- Dropdown Structure -->
       <ul id="dropdown" class="dropdown-content">
-        <li><a href="{{ url('/users') }}">個人資料</a></li>
+        <li><a href="{{ url('/users/profile') }}">個人資料</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('/auth/logout') }}">登出</a></li>
       </ul>
@@ -40,7 +40,7 @@
             <!-- mobile nav -->
             <ul id="nav-mobile" class="side-nav">
               @if(Auth::check())
-              <li class="avatar"><a href="profile.html"><img src="http://www.gravatar.com/avatar/{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img center-align"></a></li>
+              <li class="avatar"><a href="profile.html"><img src="{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img center-align"></a></li>
               @endif
               <li class="logo"><a href="/">首頁</a></li>
               <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>

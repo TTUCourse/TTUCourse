@@ -8,10 +8,10 @@
       <div class="row"></div>
       <div class="row">
         <div class="col m2">
-          <img src="http://www.gravatar.com/avatar/{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img">
+          <img src="{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img">
 
         </div>
-        <form class="col m10 s12" action="" method="POST">
+        <form class="col m10 s12" action="/users/profile" method="POST">
           <p>本系統使用 Gravatar 全球大頭貼系統</p>
           <p>您的 Gravatar 是一張跟著你穿梭各大網站的圖片。</p>
           <p>它會顯示在你的網誌、文章或評論的作者名稱旁邊。</p>
@@ -76,7 +76,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input name="nick" type="text" class="validate" value="{{ Auth::user()->nickname  }}">
+              <input name="nickname" type="text" class="validate" value="{{ Auth::user()->nickname  }}">
               <label for="nick">暱稱</label>
             </div>
           </div>
@@ -115,6 +115,11 @@
       $("form input").keypress(function(event){
         if (event.keyCode == 13) $("action").click();
       });
+      @if(count($errors) > 0)
+        @foreach( $errors->all() as $error)
+          Materialize.toast('{{ $error }}',4000);
+        @endforeach
+      @endif
     });
     </script>
 @endsection
