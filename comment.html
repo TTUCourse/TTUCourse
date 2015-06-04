@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m4">
-          <ul class="collection with-header">
+          <ul class="collection with-header grey-text">
             <li class="collection-header"><h5>程式設計一</h5></li>
             <li class="collection-item">代碼</li>
             <li class="collection-item">教師</li>
@@ -62,47 +62,68 @@
         <div class="col s12 m8">
           <div class="card">
             <div class="card-content">
-                <div class="row">
-                  <div class="col m2 s3">
-                    <img src="https://graph.facebook.com/100002166171160/picture?width=320&height=320" alt="" class="circle responsive-img">
-                  </div>
-                  <div class="col m10 s9" id="commenter">
-                    <span class="card-title blue-text">同學A</span>
-                  </div>
-                </div>
-                <div class="row">
-                  <form class="col s12">
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
-                        <label for="textarea1">分享你的意見吧</label>
-                      </div>
+              <span class="card-title grey-text">留言</span>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+                      <label for="textarea1">分享下你的經驗吧</label>
                     </div>
-                    <div class="row">
-                      <div class="col offset-m6 m3 s5">
-                        <input type="checkbox" id="hideId" />
-                        <label for="hideId">匿名</label>
-                      </div>
-                      <div class="col m3 s7">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">發佈
-                          <i class="mdi-content-send right"></i>
-                        </button>
-                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col offset-m6 m3 s5">
+                      <input type="checkbox" id="hideId" />
+                      <label for="hideId">匿名</label>
                     </div>
-                    <input type="hidden" name="_token" value="">
-                  </form>
-                </div>
+                    <div class="col m3 s7">
+                      <button class="btn waves-effect waves-light" type="submit" name="action">發佈
+                      <i class="mdi-content-send right"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <input type="hidden" name="_token" value="">
+                </form>
+              </div>
             </div>
           </div>
           <div>
             <ul class="collection">
               <li class="collection-item avatar">
                 <img src="https://graph.facebook.com/100002166171160/picture?width=320&height=320" alt="" class="circle">
-                <span class="title">同學B</span>
-                <p>我也只能跟你說加油囉~</p>
-                <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                <div class="row">
+                  <div class="title grey-text">
+                    <p>被當掉的同學B</p>
+                    <span class="date">2015-6-21 15:20</span>
+                    <a href="#!" class="secondary-content">
+                      <i class="mdi-action-thumb-up">喜歡</i>
+                    </a>
+                  </div>
+                </div>
+                <div class="row content">
+                  <p>我也只能跟你說</p>
+                  <p>加油囉wwww</p>
+                  <p>加油囉wwww</p>
+                  <p>加油囉wwww</p>
+                  <p>因為很重要所以要說三次唷</p>
+                </div>
               </li>
-            </ul> 
+              <li class="collection-item avatar">
+                <img src="https://graph.facebook.com/100002166171160/picture?width=320&height=320" alt="" class="circle">
+                <div class="row">
+                  <div class="title grey-text">
+                    <p>同學C</p>
+                    <span class="date">2015-6-21 15:20</span>
+                    <a href="#!" class="secondary-content">
+                      <i class="mdi-action-thumb-up">喜歡</i>
+                    </a>
+                  </div>
+                </div>
+                <div class="row content">
+                  <p>從這堂課能學到的知識，比預計中的還要多多呢</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

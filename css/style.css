@@ -35,3 +35,37 @@ footer.page-footer {
   border-top-width: 6px;
   border-color: transparent;
 }
+
+ul.collection > li {
+  height: auto !important;
+}
+
+.collection .collection-item.avatar {
+    height: 84px;
+    padding-left: 24px;
+    position: relative
+}
+
+.collection .collection-item.avatar .title {
+  font-size: 1.2rem;
+  padding-left: 48px;
+  margin-top: 2px !important;
+}
+
+.collection .collection-item.avatar .title .date {
+  position: absolute;
+  font-size: 0.9rem;
+  padding-left: 1px;
+  top: 32px;
+}
+
+.collection .collection-item.avatar .secondary-content {
+  top: 11px;
+}
+
+.collection .collection-item.avatar .row.content {
+  padding-top: 1rem;
+}
+
+
+
