@@ -47,14 +47,15 @@ ul.collection > li {
 }
 
 .collection .collection-item.avatar .title {
-  font-size: 1.2rem;
-  padding-left: 48px;
+  font-weight: 500;
+  padding-left: 57px;
   margin-top: 2px !important;
 }
 
 .collection .collection-item.avatar .title .date {
   position: absolute;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 0.8rem;
   padding-left: 1px;
   top: 32px;
 }
