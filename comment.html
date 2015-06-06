@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#ffa000">
   </head>
@@ -51,19 +51,49 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m4">
-          <ul class="collection with-header grey-text">
-            <li class="collection-header"><h5>程式設計一</h5></li>
-            <li class="collection-item">代碼</li>
-            <li class="collection-item">教師</li>
-            <li class="collection-item">選別</li>
-            <li class="collection-item">學分</li>
-            <li class="collection-item">人數</li>
-          </ul>
+          <div class="row">
+            <div class="card">
+              <div class="card-content">
+                <table class="striped grey-text">
+                  <thead>
+                    <tr>
+                      <th data-field="name" class="grey-text text-darken-1">程式設計一</th>
+                    </tr>
+                  </thead>
+                </table>
+                <table class="striped grey-text">
+                  
+                  <tbody>
+                    <tr>
+                      <td>代碼</td>
+                      <td>A1230</td>
+                    </tr>
+                    <tr>
+                      <td>教師</td>
+                      <td>Eclair</td>
+                    </tr>
+                    <tr>
+                      <td>選別</td>
+                      <td>必修</td>
+                    </tr>
+                    <tr>
+                      <td>學分</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>人數</td>
+                      <td>60</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col s12 m8">
           <div class="card">
             <div class="card-content">
-              <span class="card-title grey-text">留言</span>
+              <span class="card-title grey-text text-darken-1">留言</span>
               <div class="row">
                 <form class="col s12" action method="POST">
                   <div class="row">
@@ -73,7 +103,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col offset-m6 m3 s5">
+                    <div class="col offset-m7 m2 s5">
                       <input type="checkbox" id="hideId" />
                       <label for="hideId">匿名</label>
                     </div>
@@ -102,11 +132,11 @@
                   </div>
                 </div>
                 <div class="row content grey-text text-darken-3">
-                  我也只能跟你說<br>
-                  加油囉wwww<br>
-                  加油囉wwww<br>
-                  加油囉wwww<br>
-                  因為很重要所以要說三次唷
+                  我也只能跟你說
+                  <br> 加油囉wwww
+                  <br> 加油囉wwww
+                  <br> 加油囉wwww
+                  <br> 因為很重要所以要說三次唷
                 </div>
               </li>
               <li class="collection-item avatar">
@@ -124,7 +154,6 @@
                   從這堂課能學到的知識，比預計中的還要多多呢
                 </div>
               </li>
-
             </ul>
           </div>
         </div>
@@ -158,11 +187,11 @@
     <!-- Compiled and minified JavaScript -->
     <script src="js/materialize.min.js"></script>
     <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('select').material_select();
-    $("form input").keypress(function(event){
+    $("form input").keypress(function(event) {
     if (event.keyCode == 13) $("action").click();
     });
     });

@@ -68,5 +68,15 @@ ul.collection > li {
   padding-top: 1rem;
 }
 
+th {
+  font-size: 1.2rem;
+}
 
+tr td:first-child {
+  width: 33%;
+  text-align: right;
+}
 
+tr td:nth-child(2) {
+  padding-left: 10%;
+}
