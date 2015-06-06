@@ -92,46 +92,89 @@
 			</div>
 			<div class="divider"></div>
 			<div class="section">
-			</div>
-			<!--hr-->
-		<tr></tr>
-	</div>
-	</main>
-	<footer class="page-footer #ff8f00 amber darken-3">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<h5 class="white-text">Help us on Github!</h5>
-					<p class="grey-text text-lighten-4">You can help us improve the site on github! <a href="https://github.com/TTUCourse/TTUCourse">TTUCourse</a></p>
+				<div class="row">
+					<div class="col s12">
+						<div class="card">
+							<div class="card-content">
+								<table class="hoverable">
+									<thead>
+										<tr>
+											<th data-field="id">課程代碼</th>
+											<th data-field="name">課程名稱</th>
+											<th data-field="teacher">講師</th>
+											<th data-field="type">選別</th>
+											<th data-field="credit">學分</th>
+											<th data-field="number">人數</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>G1432K</td>
+											<td><a href="#">國語文能力表達(二)</a></td>
+											<td>李懿純</td>
+											<td>必修</td>
+											<td>2</td>
+											<td>55</td>
+										</tr>
+										<tr>
+											<td>I2400</td>
+											<td><a href="#">資料結構</a></td>
+											<td>謝尚琳</td>
+											<td>必修</td>
+											<td>3</td>
+											<td>58</td>
+										</tr>
+										<tr>
+											<td>I2600A</td>
+											<td><a href="#">離散數學</a></td>
+											<td>陳俊銘</td>
+											<td>必修</td>
+											<td>3</td>
+											<td>55</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col l4 offset-l2 s12">
-					<h5 class="white-text">首頁</h5>
-					<ul>
-						<li><a class="grey-text text-lighten-3" href="http://www.ttu.edu.tw/bin/home.php">大同大學</a></li>
-						<li><a class="grey-text text-lighten-3" href="http://selquery.ttu.edu.tw/Main/ListClass.php">課程資料</a></li>
-					</ul>
+			<tr></tr>
+			</main>
+			<footer class="page-footer #ff8f00 amber darken-3">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Help us on Github!</h5>
+							<p class="grey-text text-lighten-4">You can help us improve the site on github! <a href="https://github.com/TTUCourse/TTUCourse">TTUCourse</a></p>
+						</div>
+						<div class="col l4 offset-l2 s12">
+							<h5 class="white-text">首頁</h5>
+							<ul>
+								<li><a class="grey-text text-lighten-3" href="http://www.ttu.edu.tw/bin/home.php">大同大學</a></li>
+								<li><a class="grey-text text-lighten-3" href="http://selquery.ttu.edu.tw/Main/ListClass.php">課程資料</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2015 Copyright TTUCourse
-			</div>
-		</div>
-	</footer>
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-	<script src="js/materialize.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".button-collapse").sideNav();
-	$('.parallax').parallax();
-	$('select').material_select();
-	$("form input").keypress(function(event){
-	if (event.keyCode == 13) $("action").click();
-	});
-	});
-	</script>
-</body>
-</html>
+				<div class="footer-copyright">
+					<div class="container">
+						© 2015 Copyright TTUCourse
+					</div>
+				</div>
+			</footer>
+			<!--Import jQuery before materialize.js-->
+			<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+			<!-- Compiled and minified JavaScript -->
+			<script src="js/materialize.min.js"></script>
+			<script>
+			$(document).ready(function(){
+			$(".button-collapse").sideNav();
+			$('.parallax').parallax();
+			$('select').material_select();
+			$("form input").keypress(function(event){
+			if (event.keyCode == 13) $("action").click();
+			});
+			});
+			</script>
+		</body>
+	</html>
