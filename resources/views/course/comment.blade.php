@@ -77,42 +77,23 @@
         </div>
         <div>
           <ul class="collection">
+            @foreach ($comments as $comment)
             <li class="collection-item avatar">
-              <img src="https://graph.facebook.com/100002166171160/picture?width=320&height=320" alt="" class="circle">
-              <div class="row">
-                <div class="title grey-text text-darken-3">
-                  <p>被當掉的同學B</p>
-                  <span class="date grey-text text-lighten-1">2015-6-21 15:20</span>
-                  <a href="#!" class="secondary-content">
-                    <i class="mdi-action-thumb-up">喜歡</i>
-                  </a>
-                </div>
-              </div>
-              <div class="row content grey-text text-darken-3">
-                我也只能跟你說
-                <br>
-                加油囉wwww
-                <br>
-                加油囉wwww
-                <br>
-                加油囉wwww
-                <br>因為很重要所以要說三次唷</div>
-            </li>
-            <li class="collection-item avatar">
-              <img src="https://graph.facebook.com/100002166171160/picture?width=320&height=320" alt="" class="circle">
+              <img src="{{ $comment->user[0]->gravatar }}" alt="" class="circle">
               <div class="row">
                 <div class="title grey-text text-darken-4">
-                  <p>同學C</p>
-                  <span class="date grey-text">2015-6-21 21:20</span>
+                  <p>{{ $comment->user[0]->nickname }}</p>
+                  <span class="date grey-text">{{ date('Y-n-j H:i', strtotime($comment->updated_at)) }}</span>
                   <a href="#!" class="secondary-content">
                     <i class="mdi-action-thumb-up">喜歡</i>
                   </a>
                 </div>
               </div>
                 <div class="row content grey-text text-darken-3">
-                  從這堂課能學到的知識，比預計中的還要多多呢
+                  {!! nl2br(e($comment->content)) !!}
                 </div>
             </li>
+            @endforeach
           </ul>
         </div>
       </div>

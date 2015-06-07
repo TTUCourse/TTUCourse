@@ -7,7 +7,7 @@ class Comments_to extends Model {
 	//
 	protected $table = 'comments_tos';
 
-	protected $primaryKey = 'course_no';
+	protected $primaryKey = 'comment_uuid';
 
 	protected $fillable = ['course_no', 'comment_uuid'];
 
