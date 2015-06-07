@@ -13,10 +13,14 @@ class CourseController extends Controller {
 		$this->middleware('auth');
 	}
 
+	public function getIndex(){
+		return view('course.course');
+	}
+
 	public function getCourse($courseId)
 	{
-		$teacher = Course::find($courseId)->teacher;
-		return $teacher;
+		//$teacher = Course::findOrFail($courseId)->teacher;
+		return view('course.comment');
 	}
 }
 ?>

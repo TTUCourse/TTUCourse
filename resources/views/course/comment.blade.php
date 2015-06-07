@@ -51,7 +51,7 @@
           <div class="card-content">
             <span class="card-title grey-text text-darken-1">留言</span>
             <div class="row">
-              <form class="col s12" action method="POST">
+              <form class="col s12" action="{{ url('/course/commemt/') }}" method="POST">
                 <div class="row">
                   <div class="input-field col s12">
                     <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
@@ -69,7 +69,8 @@
                     </button>
                   </div>
                 </div>
-                <input type="hidden" name="_token" value=""></form>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              </form>
             </div>
           </div>
         </div>

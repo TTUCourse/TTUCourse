@@ -5,12 +5,18 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller {
 
-	public function __construct() {
+	public function __construct()
+	{
 
-	$this->middleware('auth');
+		$this->middleware('auth');
 
 	}
 
+	/**
+	 * Show the user profile to user.
+	 *
+	 * @return Response
+	 */
 	public function getProfile()
 	{
 
@@ -18,6 +24,11 @@ class UserController extends Controller {
 
 	}
 
+	/**
+	 * Check then edit user's profile.
+	 *
+	 * @return Response
+	 */
 	public function postProfile(Request $request)
 	{
 		$this->validate($request, [

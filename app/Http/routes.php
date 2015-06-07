@@ -21,5 +21,6 @@ Route::controllers([
 ]);
 
 Route::controller('users', 'UserController');
-Route::get('course/{courseId}', 'CourseController@getCourse');
+Route::get('course/{courseId}', 'CourseController@getComment');
+Route::controller('course', 'CourseController');
 ?>
