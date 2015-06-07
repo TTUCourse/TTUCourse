@@ -66,11 +66,11 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input disabled type="text" class="validate" name="lname" value="{{ Auth::user()->lname }}">
+              <input disabled type="text" class="validate" value="">
               <label for="lname">姓</label>
             </div>
             <div class="input-field col s6">
-              <input disabled type="text" class="validate" name="fname" value="{{ Auth::user()->fname }}">
+              <input disabled type="text" class="validate" value="">
               <label for="fname">名</label>
             </div>
           </div>
