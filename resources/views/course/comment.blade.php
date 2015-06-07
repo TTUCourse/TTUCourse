@@ -11,14 +11,15 @@
         <div class="row">
           <div class="card">
             <div class="card-content">
-              <table class="striped grey-text">
+                <table class="striped grey-text comment">
                 <thead>
                   <tr>
                     <th data-field="name" class="grey-text text-darken-1">程式設計一</th>
                   </tr>
                 </thead>
               </table>
-              <table class="Borderless grey-text">
+                <table class="Borderless grey-text comment">
+
                 <tbody>
                   <tr>
                     <td>代碼</td>
@@ -64,8 +65,8 @@
                     <label for="hideId">匿名</label>
                   </div>
                   <div class="col m3 s7">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">
-                      發佈 <i class="mdi-content-send right"></i>
+                      <button class="btn waves-effect waves-light" type="submit" name="action">發佈
+                      <i class="mdi-content-send right"></i>
                     </button>
                   </div>
                 </div>
@@ -108,7 +109,9 @@
                   </a>
                 </div>
               </div>
-              <div class="row content grey-text text-darken-3">從這堂課能學到的知識，比預計中的還要多多呢</div>
+                <div class="row content grey-text text-darken-3">
+                  從這堂課能學到的知識，比預計中的還要多多呢
+                </div>
             </li>
           </ul>
         </div>
