@@ -13,11 +13,11 @@ class Comment extends Model {
 
 	public function user()
 	{
-		return $this->belongsToMany('App\User', 'says', 'comment_uuid', 'id');
+		return $this->belongsToMany('App\User', 'says', 'comment_uuid', 'user_id');
 	}
 
 	public function course()
 	{
-		return $this->belongsToMany('App\Course', 'Comments_to');
+		return $this->belongsToMany('App\Course', 'comments_tos', 'comment_uuid', 'course_no');
 	}
 }

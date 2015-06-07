@@ -22,5 +22,6 @@ Route::controllers([
 
 Route::controller('users', 'UserController');
 Route::get('course/{courseId}', 'CourseController@getComment');
+Route::post('course/{courseId}', 'CourseController@postComment');
 Route::controller('course', 'CourseController');
 ?>

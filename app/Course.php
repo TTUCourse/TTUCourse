@@ -24,6 +24,7 @@ class Course extends Model {
 
 	public function comments()
 	{
-		return $this->belongsToMany('App\User', 'comments_to', 'user_id', 'id');
+		//return $this->belongsToMany('App\User', 'comments_to', 'user_id', 'id');
+		return $this->hasManyThrough('App\Comment', 'App\Comments_to', 'course_no', 'comment_uuid');
 	}
 }

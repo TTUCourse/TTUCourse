@@ -6,7 +6,7 @@
 <main>
   <div class="container">
     <div class="row section">
-      <form class="col s12" action="" method="POST">
+      <form class="col s12" action="{{ url('course/') }}" method="POST">
         <div class="input-field col m3">
           <select name="department">
             <option value="B" selected>經營系所</option>
