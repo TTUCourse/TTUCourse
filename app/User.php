@@ -37,4 +37,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		$url = 'http://www.gravatar.com/avatar/'.$hash;
 		return $url;
 	}
+
+	public function comments()
+	{
+		return $this->hasManyThrough('App\Comment', 'App\Says', 'user_id', 'comment_uuid');
+	}
 }

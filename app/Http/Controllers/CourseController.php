@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Controller;
 use App\Course;
+use App\Teacher;
+
 
 class CourseController extends Controller {
 
@@ -13,7 +15,8 @@ class CourseController extends Controller {
 
 	public function getCourse($courseId)
 	{
-		return Course::findOrFail($courseId);
+		$teacher = Course::find($courseId)->teacher;
+		return $teacher;
 	}
 }
 ?>
