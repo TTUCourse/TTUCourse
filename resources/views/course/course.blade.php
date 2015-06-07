@@ -66,36 +66,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($courses as $course)
                   <tr>
-                    <td>G1432K</td>
+                    <td>{{ $course->course_no }}</td>
                     <td>
-                      <a href="#">國語文能力表達(二)</a>
+                      <a href="{{ url('course/'.$course->course_no)}}">{{ $course->course_name }}</a>
                     </td>
-                    <td>李懿純</td>
-                    <td>必修</td>
-                    <td>2</td>
-                    <td>55</td>
+                    <td>{{ $course->teacher[0]->name }}</td>
+                    <td>{{ $course->essential }}</td>
+                    <td>{{ $course->credit }}</td>
+                    <td>{{ $course->enrollment_limit }}</td>
                   </tr>
-                  <tr>
-                    <td>I2400</td>
-                    <td>
-                      <a href="#">資料結構</a>
-                    </td>
-                    <td>謝尚琳</td>
-                    <td>必修</td>
-                    <td>3</td>
-                    <td>58</td>
-                  </tr>
-                  <tr>
-                    <td>I2600A</td>
-                    <td>
-                      <a href="#">離散數學</a>
-                    </td>
-                    <td>陳俊銘</td>
-                    <td>必修</td>
-                    <td>3</td>
-                    <td>55</td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

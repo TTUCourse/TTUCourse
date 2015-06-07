@@ -17,12 +17,15 @@ class CourseController extends Controller {
 	}
 
 	public function getIndex(){
-		return view('course.course');
+		$courses = Course::with('teacher')->get();
+		//return $courses;
+		return view('course.course', ['courses'=>$courses]);
 	}
 
 	public function postIndex(Request $request)
 	{
-		return "unfinish";
+		$courses = Course::whereRaw('department=?', [$request->input('department')])->get();
+		return redirect()->back()->with('courses', $courses);
 	}
 
 	public function getComment($courseId)
