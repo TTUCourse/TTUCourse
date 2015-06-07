@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Controller;
 use App\Course;
-use App\Teacher;
 
 
 class CourseController extends Controller {
@@ -17,10 +16,11 @@ class CourseController extends Controller {
 		return view('course.course');
 	}
 
-	public function getCourse($courseId)
+	public function getComment($courseId)
 	{
-		//$teacher = Course::findOrFail($courseId)->teacher;
-		return view('course.comment');
+		$course = Course::findOrFail($courseId);
+		$teacher = $course->teacher[0];
+		return view('course.comment', ['course'=>$course, 'teacher'=>$teacher]);
 	}
 }
 ?>

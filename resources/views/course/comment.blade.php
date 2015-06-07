@@ -14,7 +14,7 @@
                 <table class="striped grey-text comment">
                 <thead>
                   <tr>
-                    <th data-field="name" class="grey-text text-darken-1">程式設計一</th>
+                    <th data-field="name" class="grey-text text-darken-1">{{ $course->course_name }}</th>
                   </tr>
                 </thead>
               </table>
@@ -23,23 +23,23 @@
                 <tbody>
                   <tr>
                     <td>代碼</td>
-                    <td>A1230</td>
+                    <td>{{ $course->course_no }}</td>
                   </tr>
                   <tr>
                     <td>教師</td>
-                    <td>Eclair</td>
+                    <td>{{ $teacher->name }}</td>
                   </tr>
                   <tr>
                     <td>選別</td>
-                    <td>必修</td>
+                    <td>{{ $course->essential }}</td>
                   </tr>
                   <tr>
                     <td>學分</td>
-                    <td>3</td>
+                    <td>{{ $course->credit }}</td>
                   </tr>
                   <tr>
                     <td>人數</td>
-                    <td>60</td>
+                    <td>{{ $course->enrollment_limit }}</td>
                   </tr>
                 </tbody>
               </table>

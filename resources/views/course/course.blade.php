@@ -41,7 +41,9 @@
           <label for="teacher">教師名稱</label>
         </div>
         <div class="input-field right align-button">
-          <button class="btn waves-effect waves-light" type="submit" name="action"> <i class="mdi-action-search"></i>
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="mdi-action-search"></i>
           </button>
         </div>
       </form>

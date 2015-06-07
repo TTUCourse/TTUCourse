@@ -10,7 +10,7 @@ class Course extends Model {
 
 	protected $primaryKey = 'course_no';
 
-	protected $fillable = ['course_name', 'course_no', 'credit', 'department', 'enrollment_limit', 'textbook'];
+	protected $fillable = ['course_name', 'course_no', 'credit', 'department', 'essential', 'enrollment_limit', 'textbook'];
 
 	public $timestamps = false;
 

@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration {
 			$table->string('course_no')->primary();
 			$table->integer('credit');
 			$table->integer('enrollment_limit');
+			$table->string('essential');
 			$table->string('department');
 			$table->string('textbook')->nullable();
 		});
