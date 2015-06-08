@@ -16,8 +16,9 @@ class CreateCommentsTable extends Migration {
 		{
 			$table->increments('comment_uuid');
 			$table->string('content');
-			$table->double('rank', 3, 2)->default(0.00);
+			$table->integer('rank')->default(0);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

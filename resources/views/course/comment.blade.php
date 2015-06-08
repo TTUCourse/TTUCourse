@@ -1,4 +1,4 @@
-2@extends('app')
+@extends('app')
 
 @section('title', '課程資訊')
 
@@ -85,14 +85,20 @@
                     <p>{{ $comment->user[0]->nickname }}</p>
                     <span class="date grey-text text-lighten-1">{{ date('Y-n-j H:i', strtotime($comment->updated_at)) }}</span>
                     <div class="secondary-content">
-                      <a href="#!">
+                      <a href="{{ url('comment/like/'.$comment->likekey) }}">
                         <i class="mdi-action-thumb-up">喜歡</i>
-                        <span >0</span>
+                        <span >{{ $comment->rank }}</span>
                       </a>
                       {{-- if trush-disabled when you are not commnter --}}
+                      @if (Auth::user()->id == $comment->user[0]->id)
+                      <a href="{{ url('comment/delete/'.$comment->likekey) }}" >
+                        <i class="mdi-action-delete"></i>
+                      </a>
+                      @else
                       <a href="#!" class="trush-disabled">
                         <i class="mdi-action-delete"></i>
                       </a>
+                      @endif
                     </div>
                   </div>
                 </div>

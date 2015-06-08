@@ -25,7 +25,12 @@ class CourseController extends Controller {
 
 	public function postIndex(Request $request)
 	{
-		$courses = Course::whereRaw('department=?', [$request->input('department')])->get();
+		$department = $request->input('department');
+		$course_no = $request->input('course_no');
+		$course_name = $request->input('course_name');
+		$teacher = $request->input('teacher');
+		$courses = Course::where('department', $department)
+						->where('course_no', 'like', '%'.$course_no.'%')->get();
 		return view('course.course', ['courses'=>$courses]);
 	}
 
