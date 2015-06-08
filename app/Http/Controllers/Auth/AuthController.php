@@ -35,4 +35,9 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	protected function getFailedLoginMessage()
+	{
+		return '帳號/密碼錯誤喔！';
+	}
+
 }

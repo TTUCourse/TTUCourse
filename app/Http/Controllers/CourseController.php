@@ -16,7 +16,8 @@ class CourseController extends Controller {
 		$this->middleware('auth');
 	}
 
-	public function getIndex(){
+	public function getIndex()
+	{
 		$courses = Course::with('teacher')->get();
 		//return $courses;
 		return view('course.course', ['courses'=>$courses]);
@@ -25,7 +26,7 @@ class CourseController extends Controller {
 	public function postIndex(Request $request)
 	{
 		$courses = Course::whereRaw('department=?', [$request->input('department')])->get();
-		return redirect()->back()->with('courses', $courses);
+		return view('course.course', ['courses'=>$courses]);
 	}
 
 	public function getComment($courseId)

@@ -76,6 +76,7 @@
           </div>
         </div>
         <div>
+        @if (isset($comments[0]))
           <ul class="collection">
             @foreach ($comments as $comment)
             <li class="collection-item avatar">
@@ -95,6 +96,7 @@
             </li>
             @endforeach
           </ul>
+        @endif
         </div>
       </div>
     </div>
