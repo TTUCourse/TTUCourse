@@ -66,17 +66,17 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input disabled type="text" class="validate" value="">
+              <input disabled type="text" class="validate" value="{{ Auth::user()->lname }}">
               <label for="lname">姓</label>
             </div>
             <div class="input-field col s6">
-              <input disabled type="text" class="validate" value="">
+              <input disabled type="text" class="validate" value="{{ Auth::user()->fname }}">
               <label for="fname">名</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input name="nickname" type="text" class="validate" value="{{ Auth::user()->nickname  }}">
+              <input name="nickname" type="text" class="validate" value="{{ Auth::user()->nickname }}">
               <label for="nick">暱稱</label>
             </div>
           </div>
@@ -111,8 +111,8 @@
     $(document).ready(function(){
       $(".button-collapse").sideNav();
       $('.parallax').parallax();
-      $("select[name='department']").find("[value='I']").attr("selected", "selected")
-      $("select[name='grade']").find("[value='2']").attr("selected", "selected")
+      $("select[name='department']").find("[value='{{ Auth::user()->department }}']").attr("selected", "selected")
+      $("select[name='grade']").find("[value='{{ Auth::user()->grade }}']").attr("selected", "selected")
       $('select').material_select();
       $("form input").keypress(function(event){
         if (event.keyCode == 13) $("action").click();
