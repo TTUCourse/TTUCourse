@@ -66,7 +66,7 @@
               <select name="department">
                 <option value="B">經營系所</option>
                 <option value="E">電機系所</option>
-                <option value="I">資工系所</option>
+                <option value="I" selected>資工系所</option>
                 <option value="C">化工系所</option>
                 <option value="D">工設系所</option>
                 <option value="L">應外系</option>
@@ -85,7 +85,7 @@
               <label>科系</label>
             </div>
             <div class="input-field col s6">
-              <select name="grade" value="">
+              <select name="grade">
                 <option value="1">大一新鮮人</option>
                 <option value="2">大二小菜鳥</option>
                 <option value="3">大三老菜鳥</option>
@@ -174,10 +174,13 @@
     $(document).ready(function(){
       $(".button-collapse").sideNav();
       $('.parallax').parallax();
+      $("select[name='department']").find("[value='I']").attr("selected", "selected")
+      $("select[name='grade']").find("[value='2']").attr("selected", "selected")
       $('select').material_select();
       $("form input").keypress(function(event){
         if (event.keyCode == 13) $("action").click();
       });
+
     });
     </script>
   </body>
