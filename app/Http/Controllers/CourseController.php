@@ -59,7 +59,7 @@ class CourseController extends Controller {
 	public function postComment(Request $request, $courseId)
 	{
 		$comment = new Comment(['content'=>$request->input('comment')]);
-		if(isset($request->input('anonymous'))){
+		if(null !== $request->input('anonymous')){
 			$comment->anonymous=$request->input('anonymous');
 		}
 		$comment->save();

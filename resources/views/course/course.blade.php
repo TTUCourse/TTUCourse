@@ -66,6 +66,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @if (isset($courses))
                     @foreach ($courses as $course)
                     <tr>
                       <td>{{ $course->course_no }}</td>
@@ -78,6 +79,7 @@
                       <td>{{ $course->enrollment_limit }}</td>
                     </tr>
                     @endforeach
+                    @endif
                   </tbody>
                 </table>
               </div>
