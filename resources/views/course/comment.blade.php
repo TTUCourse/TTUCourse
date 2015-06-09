@@ -60,7 +60,7 @@
                   </div>
                   <div class="row">
                     <div class="col offset-m7 m2 s5">
-                      <input type="checkbox" id="hideId" />
+                      <input type="checkbox" id="hideId" name="anonymous" value="1" />
                       <label for="hideId">匿名</label>
                     </div>
                     <div class="col m3 s7">
@@ -79,10 +79,18 @@
             <ul class="collection">
               @foreach ($comments as $comment)
               <li class="collection-item avatar">
+                @if ($comment->anonymous > 0)
+                <img src="" alt="" class="circle">
+                @else
                 <img src="{{ $comment->user[0]->gravatar }}" alt="" class="circle">
+                @endif
                 <div class="row">
                   <div class="title grey-text text-darken-3">
+                    @if ($comment->anonymous > 0)
+                    <p>ಠ_ಠ</p>
+                    @else
                     <p>{{ $comment->user[0]->nickname }}</p>
+                    @endif
                     <span class="date grey-text text-lighten-1">{{ date('Y-n-j H:i', strtotime($comment->updated_at)) }}</span>
                     <div class="secondary-content">
                       <a href="{{ url('comment/like/'.$comment->likekey) }}">

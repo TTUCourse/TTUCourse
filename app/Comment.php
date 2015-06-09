@@ -12,7 +12,7 @@ class Comment extends Model {
 
 	protected $primaryKey = 'comment_uuid';
 
-	protected $fillable = ['comment_uuid', 'content', 'rank'];
+	protected $fillable = ['comment_uuid', 'content', 'anonymous', 'rank'];
 
 	protected $dates = ['deleted_at'];
 

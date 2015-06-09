@@ -62,8 +62,10 @@
         </div>
       </div>
       <div class="row">
+        @if (!Auth::check())
         <p class="flow-text center-align">立刻加入所有大同學生都關注的評價網</p>
         <a id="register" class="waves-effect waves-light btn-large" href="{{ url('/auth/register') }}">立即註冊</a>
+        @endif
       </div>
     </div>
   </div>

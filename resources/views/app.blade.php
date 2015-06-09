@@ -17,6 +17,8 @@
       @if(Auth::check())
       <!-- Dropdown Structure -->
       <ul id="dropdown" class="dropdown-content">
+        <li><a href="{{ url('/course/') }}">課程查詢</a></li>
+        <li class="divider"></li>
         <li><a href="{{ url('/users/profile') }}">個人資料</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('/auth/logout') }}">登出</a></li>
@@ -43,9 +45,10 @@
               <li class="avatar"><a href="profile.html"><img src="{{ Auth::user()->gravatar }}" alt="大頭" class="circle responsive-img center-align"></a></li>
               @endif
               <li class="logo"><a href="/">首頁</a></li>
-              <li class="bold"><a href="about.html" class="waves-effect waves-teal">關於</a></li>
               @if(Auth::check())
-              <li class="bold"><a href="{{ url('/auth/logout') }}" class="waves-effect waves-teal">登出</a></li>
+              <li class="blod"><a href="{{ url('/course/') }}">課程查詢</a></li>
+              <li class="blod"><a href="{{ url('/users/profile') }}">個人資料</a></li>
+              <li class="bold"><a href="{{ url('/auth/logout') }}">登出</a></li>
               @else
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">

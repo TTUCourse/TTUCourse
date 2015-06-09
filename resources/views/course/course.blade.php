@@ -72,7 +72,7 @@
                       <td>
                         <a href="{{ url('course/'.$course->course_no)}}">{{ $course->course_name }}</a>
                       </td>
-                      <td>{{ $course->teacher[0]->name }}</td>
+                      <td>{{ $course->name }}</td>
                       <td>{{ $course->essential }}</td>
                       <td>{{ $course->credit }}</td>
                       <td>{{ $course->enrollment_limit }}</td>
