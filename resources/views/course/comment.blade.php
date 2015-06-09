@@ -80,7 +80,7 @@
               @foreach ($comments as $comment)
               <li class="collection-item avatar">
                 @if ($comment->anonymous > 0)
-                <img src="" alt="" class="circle">
+                <img src="{{ url('img/anonymous.png') }}" alt="" class="circle">
                 @else
                 <img src="{{ $comment->user[0]->gravatar }}" alt="" class="circle">
                 @endif

@@ -17,7 +17,7 @@
       </div>
     </div>
     </main>
-@stopgit 
+@stop
 
 @section('script')
     <script>
