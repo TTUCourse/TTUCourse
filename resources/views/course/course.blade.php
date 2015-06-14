@@ -9,7 +9,8 @@
         <form class="col s12" action="{{ url('course/') }}" method="POST">
           <div class="input-field col m3">
             <select name="department">
-              <option value="B" selected>經營系所</option>
+            	<option value="" selected>請選擇系所</option>
+              <option value="B">經營系所</option>
               <option value="E">電機系所</option>
               <option value="I">資工系所</option>
               <option value="C">化工系所</option>
@@ -41,10 +42,10 @@
             <label for="teacher">教師名稱</label>
           </div>
           <div class="input-field right align-button">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <button class="btn waves-effect waves-light" type="submit" name="action">
             <i class="mdi-action-search"></i>
             </button>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
           </div>
         </form>
       </div>
