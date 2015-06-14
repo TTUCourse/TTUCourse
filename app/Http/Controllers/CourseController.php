@@ -38,7 +38,7 @@ class CourseController extends Controller {
 		$courses = DB::table('courses')
 					->join('instructs', 'instructs.course_no', '=', 'courses.course_no')
 					->join('teachers', 'teachers.id', '=', 'instructs.teacher_id')
-					->where('courses.department', $department)
+					->where('courses.department', 'like', '%'.$department.'%')
 					->where('courses.course_no', 'like','%'.$course_no.'%')
 					->where('courses.course_name', 'like', '%'.$course_name.'%')
 					->where('teachers.name', 'like', '%'.$teacher.'%')
