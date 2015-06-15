@@ -49,7 +49,7 @@ $(document).ready(function(){
   });
   @if(count($errors) > 0)
     @foreach( $errors->all() as $error)
-      Materialize.toast('{{ $error }}',4000);
+      Materialize.toast('{{ $error }}<a href="forgot.html">忘記密碼？</a>',4000);
     @endforeach
   @endif
 });
