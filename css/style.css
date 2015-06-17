@@ -68,18 +68,6 @@ ul.collection > li {
   padding-top: 1rem;
 }
 
-table.comment thead tr th{
-  font-size: 1.2rem;
-}
-
-table.comment tbody tr td:first-child {
-  width: 33%;
-}
-
-table.comment tbody tr td:nth-child(2) {
-  padding-left: 10%;
-}
-
 .align-button {
   padding-top: 0.7rem;
 }
