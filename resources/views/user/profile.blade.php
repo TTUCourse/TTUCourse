@@ -107,7 +107,7 @@
     </main>
 @stop
 @section('script')
-<script>
+    <script>
     $(document).ready(function(){
       $(".button-collapse").sideNav();
       $('.parallax').parallax();

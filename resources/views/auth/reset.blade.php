@@ -1,59 +1,55 @@
 @extends('app')
 
+@section('title', '重設')
+
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="hidden" name="token" value="{{ $token }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Reset Password
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<main>
+    <div class="container">
+      <div class="row"></div>
+      <div class="row">
+        <form class="col s12" action="{{ url('/password/reset') }}" method="POST">
+          <div class="row">
+            <div class="input-field col offset-m3 m6 s12">
+              <input name="password" id="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
+              <label for="password">新的密碼</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-m3 m6 s12">
+              <input type="password" class="validate" required pattern=".{8,}" title="請再次輸入你的密碼" onchange="this.setCustomValidity(this.value === password.value ? '' : '輸入的密碼與前一次不同！');" name="password_confirmation">
+              <label for="password">確認密碼</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m9 s12">
+              <div class="input-field right">
+                <button class="btn waves-effect waves-light" type="submit" name="action">重設密碼
+                  <i class="mdi-content-send right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="email" value="{{ old('email') }}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="token" value="{{ $token }}">
+        </form>
+      </div>
+    </div>
+    </main>
+@stop
+@section('script')
+    <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+      $('.parallax').parallax();
+      $("form input").keypress(function(event){
+        if (event.keyCode == 13) $("action").submit();
+      });
+      @if(count($errors) > 0)
+        @foreach( $errors->all() as $error)
+          Materialize.toast('{{ $error }}<a href=\"{{ url("password/email") }}\">忘記密碼？</a>',4000);
+        @endforeach
+      @endif
+    });
+    </script>
 @endsection

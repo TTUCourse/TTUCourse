@@ -7,9 +7,9 @@
     <div class="container">
       <div class="row section">
         <form class="col s12" action="{{ url('course/') }}" method="POST">
-          <div class="input-field col m3">
+          <div class="input-field col m3 s12">
             <select name="department">
-            	<option value="" selected>請選擇系所</option>
+              <option value="" selected>請選擇系所</option>
               <option value="B">經營系所</option>
               <option value="E">電機系所</option>
               <option value="I">資工系所</option>
@@ -29,15 +29,15 @@
               <option value="W">通訊所</option>
             </select>
           </div>
-          <div class="input-field col m2">
+          <div class="input-field col m2 s12">
             <input name="course_no" id="course_no" type="text" class="validate">
             <label for="course_no">課程代碼</label>
           </div>
-          <div class="input-field col m2">
+          <div class="input-field col m2 s12">
             <input name="course_name" id="course_name" type="text" class="validate">
             <label for="course_name">課程名稱</label>
           </div>
-          <div class="input-field col m2">
+          <div class="input-field col m2 s12">
             <input name="teacher" id="teacher" type="text" class="validate">
             <label for="teacher">教師名稱</label>
           </div>
@@ -45,8 +45,8 @@
             <button class="btn waves-effect waves-light" type="submit" name="action">
             <i class="mdi-action-search"></i>
             </button>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
           </div>
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </form>
       </div>
       <div class="divider"></div>
@@ -95,12 +95,12 @@
 @section('script')
     <script>
     $(document).ready(function(){
-    $(".button-collapse").sideNav();
-    $('.parallax').parallax();
-    $('select').material_select();
-    $("form input").keypress(function(event){
-    if (event.keyCode == 13) $("action").click();
-    });
+      $(".button-collapse").sideNav();
+      $('.parallax').parallax();
+      $('select').material_select();
+      $("form input").keypress(function(event){
+        if (event.keyCode == 13) $("action").click();
+      });
     });
     </script>
 @endsection

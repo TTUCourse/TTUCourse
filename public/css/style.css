@@ -32,7 +32,7 @@ footer.page-footer {
 
 [type="checkbox"] + label {
   border-top-style: solid;
-  border-top-width: 6px;
+  border-top-width: .6em;
   border-color: transparent;
 }
 
@@ -41,9 +41,9 @@ ul.collection > li {
 }
 
 .collection .collection-item.avatar {
-    height: 84px;
-    padding-left: 24px;
-    position: relative
+  height: 84px;
+  padding-left: 24px;
+  position: relative
 }
 
 .collection .collection-item.avatar .title {
@@ -68,24 +68,16 @@ ul.collection > li {
   padding-top: 1rem;
 }
 
-table.comment thead tr th{
-  font-size: 1.2rem;
-}
-
-table.comment tbody tr td:first-child {
-  width: 33%;
-}
-
-table.comment tbody tr td:nth-child(2) {
-  padding-left: 10%;
-}
-
 .align-button {
   padding-top: 0.7rem;
 }
 
 .trush-disabled {
-   pointer-events: none;
-   cursor: default;
-   visibility: hidden;
+  pointer-events: none;
+  cursor: default;
+  visibility: hidden;
+}
+
+.dropdown-content {
+  z-index: 999 !important;
 }
