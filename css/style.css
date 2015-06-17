@@ -41,9 +41,9 @@ ul.collection > li {
 }
 
 .collection .collection-item.avatar {
-    height: 84px;
-    padding-left: 24px;
-    position: relative
+  height: 84px;
+  padding-left: 24px;
+  position: relative
 }
 
 .collection .collection-item.avatar .title {
@@ -85,7 +85,11 @@ table.comment tbody tr td:nth-child(2) {
 }
 
 .trush-disabled {
-   pointer-events: none;
-   cursor: default;
-   visibility: hidden;
+  pointer-events: none;
+  cursor: default;
+  visibility: hidden;
+}
+
+.dropdown-content {
+  z-index: 999 !important;
 }
