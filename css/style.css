@@ -32,7 +32,7 @@ footer.page-footer {
 
 [type="checkbox"] + label {
   border-top-style: solid;
-  border-top-width: 6px;
+  border-top-width: .6em;
   border-color: transparent;
 }
 
