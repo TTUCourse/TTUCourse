@@ -2,7 +2,7 @@
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8">
-    <title>忘了 - 大同課評網</title>
+    <title>重設 - 大同課評網</title>
     <meta name="description" content="大同大學課程評價網站">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="css/materialize.min.css">
@@ -52,15 +52,20 @@
         <form class="col s12" action="" method="POST">
           <div class="row">
             <div class="input-field col offset-m3 m6 s12">
-              <i class="mdi-communication-email prefix"></i>
-              <input name="email" type="email" class="validate" required pattern="\w\d{7,8}@ms.ttu.edu.tw" title="請使用學校信箱">
-              <label for="email">Email</label>
+              <input name="password" id="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
+              <label for="password">新的密碼</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-m3 m6 s12">
+              <input type="password" class="validate" required pattern=".{8,}" title="請再次輸入你的密碼" onchange="this.setCustomValidity(this.value === password.value ? '' : '輸入的密碼與前一次不同！');">
+              <label for="password">確認密碼</label>
             </div>
           </div>
           <div class="row">
             <div class="col m9 s12">
               <div class="input-field right">
-                <button class="btn waves-effect waves-light" type="submit" name="action">我忘記密碼了啾咪
+                <button class="btn waves-effect waves-light" type="submit" name="action">重設密碼
                   <i class="mdi-content-send right"></i>
                 </button>
               </div>
