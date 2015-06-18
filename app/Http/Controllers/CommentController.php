@@ -27,7 +27,9 @@ class CommentController extends Controller {
 	{
 		$comment_id = Crypt::decrypt($hashedLikeId);
 		$comment = Comment::find($comment_id);
-		$comment->delete();
+		if($comment->user[0]->id == Auth::user()->id){
+			$comment->delete();
+		}
 		return redirect()->back();
 	}
 }
