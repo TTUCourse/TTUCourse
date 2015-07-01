@@ -26,6 +26,11 @@ class Comment extends Model {
 		return $this->belongsToMany('App\Course', 'comments_tos', 'comment_uuid', 'course_no');
 	}
 
+	public function whoLikes()
+	{
+		return $this->belongsToMany('App\User', 'likes', 'comment_uuid', 'user_id');
+	}
+
 	public function getLikekeyAttribute()
 	{
 		$hash = Crypt::encrypt($this->comment_uuid);

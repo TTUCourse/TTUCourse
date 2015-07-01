@@ -9,7 +9,6 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
-
 	/**
 	 * The database table used by the model.
 	 *
@@ -42,4 +41,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasManyThrough('App\Comment', 'App\Says', 'user_id', 'comment_uuid');
 	}
+
+	public function likes()
+	{
+		return $this->hasManyThrough('App\Comment', 'App\likes', 'user_id', 'comment_uuid');
+	}
+
 }
