@@ -25,7 +25,7 @@ class CommentController extends Controller {
 		foreach ($likeUserArray as $who) {
 			$result = array_intersect_assoc($who, $user);
 			if(array_key_exists('id', $result)){
-				return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
+				return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
 			}
 		}
 		$comment->rank++;
@@ -52,7 +52,7 @@ class CommentController extends Controller {
 				return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
 			}
 		}
-		return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
+		return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
 		//}
 		//abort(404);
 	}
