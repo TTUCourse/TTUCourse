@@ -52,7 +52,7 @@ class CourseController extends Controller {
 		$course = Course::findOrFail($courseId);
 		$teacher = $course->teacher[0];
 		$comment = $course->comments;
-		//return $comment;
+
 		return view('course.comment', ['course'=>$course, 'teacher'=>$teacher, 'comments'=>$comment]);
 	}
 

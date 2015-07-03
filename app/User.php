@@ -44,7 +44,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function likes()
 	{
-		return $this->hasManyThrough('App\Comment', 'App\likes', 'user_id', 'comment_uuid');
+		return $this->hasManyThrough('App\Comment', 'App\Like', 'user_id', 'comment_uuid');
+	}
+
+	public function isLiked($comment_uuid)
+	{
+		foreach ($this->likes as $value) {
+			if($value->comment_uuid == $comment_uuid){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

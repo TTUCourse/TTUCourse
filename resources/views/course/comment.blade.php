@@ -89,8 +89,13 @@
                     @endif
                     <span class="date grey-text text-lighten-1">{{ date('Y-n-j H:i', strtotime($comment->updated_at)) }}</span>
                     <div class="secondary-content">
+                    @if(Auth::user()->isLiked($comment->comment_uuid))
+                      <a href="{{ url('comment/unlike/'.$comment->likekey) }}">
+                        <i class="mdi-action-thumb-up">收回喜歡</i>
+                    @else
                       <a href="{{ url('comment/like/'.$comment->likekey) }}">
                         <i class="mdi-action-thumb-up">喜歡</i>
+                    @endif
                         <span >{{ $comment->rank }}</span>
                       </a>
                       {{-- if trush-disabled when you are not commnter --}}
