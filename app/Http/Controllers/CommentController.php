@@ -49,10 +49,10 @@ class CommentController extends Controller {
 				$comment->whoLikes()->detach(Auth::user()->id);
 				$comment->rank--;
 				$comment->save();
-				return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
+				return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
 			}
 		}
-		return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
+		return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
 		//}
 		//abort(404);
 	}
