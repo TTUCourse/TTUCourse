@@ -55,7 +55,7 @@
                   <div class="right">
                     <div class="row">
                       <div class="col s5">
-                        <input type="checkbox" id="hideId" />
+                        <input type="checkbox" id="hideId" name="anonymous" value="1" />
                         <label for="hideId">匿名</label>
                       </div>
                       <div class="col s7">
@@ -129,6 +129,20 @@
       $("form input").keypress(function(event) {
         if (event.keyCode == 13) $("action").click();
       });
+      $(".secondary-content>a:first-child").click(function() {
+        $.get(this.href, function (res){
+          if (res.status == "unlike") {
+            $(this).children("i").text("收回喜歡");
+            this.href = this.href.replace("/like/", "/unlike/")
+          }
+          else {
+            $(this).children("i").text("喜歡");
+            this.href = this.href.replace("/unlike/", "/like/")
+          }
+          $(this).children("span").text(res.rank);
+        }.bind(this))
+        return false;
+      })
     });
     </script>
 @endsection
