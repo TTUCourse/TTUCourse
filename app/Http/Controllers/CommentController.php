@@ -25,13 +25,13 @@ class CommentController extends Controller {
 		foreach ($likeUserArray as $who) {
 			$result = array_intersect_assoc($who, $user);
 			if(array_key_exists('id', $result)){
-				return response()->json(['success'=>false, 'rank'=>$comment->rank]);
+				return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
 			}
 		}
 		$comment->rank++;
 		$comment->save();
 		$comment->whoLikes()->attach(Auth::user()->id);
-		return response()->json(['success'=>true, 'rank'=>$comment->rank]);
+		return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
 		//}
 		//abort(404);
 	}
@@ -49,10 +49,10 @@ class CommentController extends Controller {
 				$comment->whoLikes()->detach(Auth::user()->id);
 				$comment->rank--;
 				$comment->save();
-				return response()->json(['success'=>true, 'rank'=>$comment->rank]);
+				return response()->json(['status'=>'unlike', 'rank'=>$comment->rank]);
 			}
 		}
-		return response()->json(['success'=>false, 'rank'=>$comment->rank]);
+		return response()->json(['status'=>'like', 'rank'=>$comment->rank]);
 		//}
 		//abort(404);
 	}
