@@ -34,6 +34,7 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+		$confirmation_code = str_random(30);
 		return User::create([
 			'fname' => $data['fname'],
 			'lname' => $data['lname'],
@@ -43,6 +44,7 @@ class Registrar implements RegistrarContract {
 			'grade' => $data['grade'],
 			'department' => $data['department'],
 			'nickname' => $data['nickname'],
+			'activate_code' => $confirmation_code
 		]);
 	}
 

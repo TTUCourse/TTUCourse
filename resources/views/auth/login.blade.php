@@ -52,6 +52,9 @@
           Materialize.toast('{{ $error }}<a href=\"{{ url("password/email") }}\">忘記密碼？</a>',4000);
         @endforeach
       @endif
+      @if(Session::has('message'))
+        Materialize.toast('{{ Session::get('message') }}',4000);
+      @endif
     });
     </script>
 @endsection

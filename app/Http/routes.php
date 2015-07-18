@@ -20,6 +20,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('verify/{activate_code}', 'Auth\AuthController@verify');
 Route::controller('users', 'UserController');
 Route::get('course/{courseId}', 'CourseController@getComment');
 Route::post('course/{courseId}', 'CourseController@postComment');

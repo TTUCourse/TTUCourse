@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration {
 			$table->integer('grade')->default(1);
 			$table->integer('group')->default(0);
 			$table->string('nickname');
+			$table->integer('activate')->default(0);
+			$table->string('activate_code')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

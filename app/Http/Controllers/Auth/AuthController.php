@@ -4,6 +4,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Mail;
+use Session;
+use App\User;
 
 class AuthController extends Controller {
 
@@ -35,9 +39,75 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	public function verify($activate_code)
+	{
+		$user = User::where('activate_code', '=', $activate_code)->first();
+
+		if(!$user){
+			abort(404);
+		}
+
+		$user->activate = 1;
+    $user->activate_code = null;
+    $user->save();
+
+		Session::flash('message', '認證成功');
+
+		return redirect('/auth/login/');
+	}
+
+	public function postRegister(Request $request)
+	{
+		$validator = $this->registrar->validator($request->all());
+
+		if ($validator->fails())
+		{
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
+
+		$user = $this->registrar->create($request->all());
+		$confirmation_code = $user->activate_code;
+
+		Mail::send('emails.verify', ['confirmation_code' => $confirmation_code], function($message) use ($request) {
+			$message->to($request->email, $request->fname)
+							->from('register@ttucourse.tk', 'TTUCourse')
+							->subject('課評網註冊驗證信');
+		});
+		Session::flash('message', '請前往信箱收取認證信');
+		return redirect('/auth/login/');
+	}
+
+	public function postLogin(Request $request)
+	{
+		$this->validate($request, [
+			'email' => 'required|email', 'password' => 'required',
+		]);
+
+		$input = $request->only('email', 'password');
+
+		$credentials = [
+			'email' => $input['email'],
+			'password' => $input['password'],
+			'activate' => 1
+		];
+
+		if ($this->auth->attempt($credentials, $request->has('remember')))
+		{
+			return redirect()->intended($this->redirectPath());
+		}
+
+		return redirect($this->loginPath())
+					->withInput($request->only('email', 'remember'))
+					->withErrors([
+						'email' => $this->getFailedLoginMessage(),
+					]);
+	}
+
 	protected function getFailedLoginMessage()
 	{
-		return '帳號/密碼錯誤喔！';
+		return '帳號/密碼錯誤喔！或是帳號尚未啟用喔！';
 	}
 
 }
