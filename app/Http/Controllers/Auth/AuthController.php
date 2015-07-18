@@ -72,7 +72,7 @@ class AuthController extends Controller {
 
 		Mail::send('emails.verify', ['confirmation_code' => $confirmation_code], function($message) use ($request) {
 			$message->to($request->email, $request->fname)
-							->from('register@ttucourse.tk', 'TTUCourse')
+							->from('register@verify.ttucourse.org', 'TTUCourse')
 							->subject('課評網註冊驗證信');
 		});
 		Session::flash('message', '請前往信箱收取認證信');
