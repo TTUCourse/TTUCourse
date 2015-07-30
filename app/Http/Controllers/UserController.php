@@ -42,7 +42,7 @@ class UserController extends Controller {
 
 		if($request->has('password'))
 		{
-			$user->password = $request->input('password');
+			$user->password = bcrypt($request->input('password'));
 		}
 
 		if($user->nickname != $request->input('nickname'))
