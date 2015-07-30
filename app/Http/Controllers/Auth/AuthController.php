@@ -72,7 +72,6 @@ class AuthController extends Controller {
 
 		Mail::send('emails.verify', ['confirmation_code' => $confirmation_code], function($message) use ($request) {
 			$message->to($request->email, $request->fname)
-							->from('register@verify.ttucourse.org', 'TTUCourse')
 							->subject('課評網註冊驗證信');
 		});
 		Session::flash('message', '請前往信箱收取認證信');
@@ -107,7 +106,7 @@ class AuthController extends Controller {
 
 	protected function getFailedLoginMessage()
 	{
-		return '帳號/密碼錯誤喔！或是帳號尚未啟用喔！';
+		return '帳號/密碼錯誤喔！';
 	}
 
 }
