@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\PasswordReset;
 
 class PasswordController extends Controller {
 
@@ -34,5 +35,34 @@ class PasswordController extends Controller {
 
 		$this->middleware('guest');
 	}
+
+	/**
+	 * Get the e-mail subject line to be used for the reset link email.
+	 *
+	 * @return string
+	 */
+	protected function getEmailSubject()
+	{
+		return isset($this->subject) ? $this->subject : '密碼重設連結信';
+	}
+
+	/**
+	 * Display the password reset view for the given token.
+	 *
+	 * @param  string  $token
+	 * @return Response
+	 */
+	public function getReset($token = null)
+	{
+		if (is_null($token))
+		{
+			throw new NotFoundHttpException;
+		}
+		$email = PasswordReset::where('token', '=', $token)->first()->email;
+		return view('auth.reset')
+				->with('token', $token)
+				->with('email', $email);
+	}
+
 
 }

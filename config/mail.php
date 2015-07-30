@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => env('MAIL_ADDR', 'admin@ttucourse.org'), 'name' => env('MAIL_NAME', '大同大學課評網')],
 
 	/*
 	|--------------------------------------------------------------------------

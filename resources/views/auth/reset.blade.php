@@ -10,6 +10,12 @@
         <form class="col s12" action="{{ url('/password/reset') }}" method="POST">
           <div class="row">
             <div class="input-field col offset-m3 m6 s12">
+              <input id="email" type="text" value="{{ $email }}" disabled>
+              <label for="email">電子郵件</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-m3 m6 s12">
               <input name="password" id="password" type="password" class="validate" required pattern=".{8,}" title="密碼長度至少八碼以上">
               <label for="password">新的密碼</label>
             </div>
@@ -29,7 +35,7 @@
               </div>
             </div>
           </div>
-          <input type="hidden" name="email" value="{{ old('email') }}">
+          <input type="hidden" name="email" value="{{ $email }}">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <input type="hidden" name="token" value="{{ $token }}">
         </form>
