@@ -28,4 +28,5 @@ Route::controller('course', 'CourseController');
 Route::get('comment/like/{hashedLikeId}', 'CommentController@getLike');
 Route::get('comment/unlike/{hashLikeId}', 'CommentController@getUnlike');
 Route::get('comment/delete/{hashedLikeId}', 'CommentController@getDelete');
+Route::controller('admin/', 'AdminController');
 ?>
