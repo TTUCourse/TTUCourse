@@ -89,37 +89,60 @@
             </div>
             <input type="hidden" name="_token" value="">
           </form>
-          <div class="section">
-            <div class="row">
-              <div class="col s12">
-                <div class="card">
-                  <div class="card-content">
-                    <table class="hoverable">
-                      <thead>
-                        <tr>
-                          <th data-field="id">帳號</th>
-                          <th data-field="name">姓名</th>
-                          <th data-field="name">狀態</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>u10200000@ms.ttu.edu.tw</td>
-                          <td>問號</td>
-                          <td><a href="#">恢復</a></td>
-                        </tr>
-                        <tr>
-                          <td>u10200001@ms.ttu.edu.tw</td>
-                          <td>問號</td>
-                          <td><a href="#">恢復</a></td>
-                        </tr>
-                        <tr>
-                          <td>u10200002@ms.ttu.edu.tw</td>
-                          <td>問號</td>
-                          <td><a href="#">封鎖</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <div class="section">
+              <div class="row">
+                <div class="col s12">
+                  <div class="card">
+                    <div class="card-content">
+                      <form action="" method="POST">
+                        <div class="row">
+                          <div class="col m3">
+                          <button class="btn waves-effect waves-light" type="submit" name="action">
+                          封鎖帳號
+                        </button>
+                      </div>
+                    </div>
+                      <table class="hoverable">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th data-field="id">帳號</th>
+                            <th data-field="name">姓名</th>
+                            <th data-field="name">狀態</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox" class="filled-in" id="account1" />
+                              <label for="account1"></label>
+                            </td>
+                            <td>u10200000@ms.ttu.edu.tw</td>
+                            <td>問號</td>
+                            <td>正常</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" class="filled-in" id="account2" />
+                              <label for="account2"></label>
+                            </td>
+                            <td>u10200001@ms.ttu.edu.tw</td>
+                            <td>問號1</td>
+                            <td>正常</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" class="filled-in" id="account3" />
+                              <label for="account3"></label>
+                            </td>
+                            <td>u10200002@ms.ttu.edu.tw</td>
+                            <td>問號2</td>
+                            <td>封鎖</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <input type="hidden" name="_token" value="">
+                    </form>
                   </div>
                 </div>
               </div>
@@ -171,98 +194,96 @@
           </form>
           <div class="section">
             <div class="row">
-              <form class="col s12" action="" method="POST">
-                <div class="card">
-                  <div class="card-content">
-                    <form action="" method="POST">
-                      <div class="row">
-                        <div class="col m3">
-                          <button class="btn waves-effect waves-light" type="submit" name="action">
-                            刪除留言
-                          </button>
-                        </div>
-                        <div class="col m3">
-                          <button class="btn waves-effect waves-light" type="submit" name="action">
-                            封鎖帳號
-                          </button>
-                        </div>
+              <div class="card col s12">
+                <div class="card-content">
+                  <form action="" method="POST">
+                    <div class="row">
+                      <div class="col m3">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">
+                          刪除留言
+                        </button>
                       </div>
-                      <table class="hoverable"> 
-                        <thead>
-                          <tr>
-                            <th></th>
-                            <th data-field="commenter">姓名</th>
-                            <th data-field="id">課程代碼</th>
-                            <th data-field="name">課程名稱</th>
-                            <th data-field="content">留言</th>
-                            <th data-field="like">讚數</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <input type="checkbox" class="filled-in" id="comment1" />
-                              <label for="comment1"></label>
-                            </td>
-                            <td>帥帥主恩</td>
-                            <td>G1432K</td>
-                            <td><a href="#">國語文能力表達(二)</a></td>
-                            <td><a class="modal-trigger" href="#modal1">我也只能跟你...</a></td>
-                            <div id="modal1" class="modal">
-                              <div class="modal-content">
-                                <p>我也只能跟你說<br>
-                                加油囉wwww<br>
-                                加油囉wwww<br> 
-                                加油囉wwww<br>
-                                因為很重要所以要說三次唷
-                                </p>
-                              </div>
+                      <div class="col m3">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">
+                          封鎖帳號
+                        </button>
+                      </div>
+                    </div>
+                    <table class="hoverable">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th data-field="commenter">姓名</th>
+                          <th data-field="id">課程代碼</th>
+                          <th data-field="name">課程名稱</th>
+                          <th data-field="content">留言</th>
+                          <th data-field="like">讚數</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input type="checkbox" class="filled-in" id="comment1" />
+                            <label for="comment1"></label>
+                          </td>
+                          <td>帥帥主恩</td>
+                          <td>G1432K</td>
+                          <td><a href="#">國語文能力表達(二)</a></td>
+                          <td><a class="modal-trigger" href="#modal1">我也只能跟你...</a></td>
+                          <div id="modal1" class="modal">
+                            <div class="modal-content">
+                              <p>我也只能跟你說<br>
+                              加油囉wwww<br>
+                              加油囉wwww<br>
+                              加油囉wwww<br>
+                              因為很重要所以要說三次唷
+                              </p>
                             </div>
-                            <td>55</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <input type="checkbox" class="filled-in" id="comment2" />
-                              <label for="comment2"></label>
-                            </td>
-                            <td>笨笨球(匿名)</td>
-                            <td>A1230</td>
-                            <td><a href="#">程式設計一</a></td>
-                            <td><a class="modal-trigger" href="#modal2">我是笨笨笨笨...</a></td>
-                            <div id="modal2" class="modal">
-                              <div class="modal-content">
-                                <p>我是笨笨笨<br>
-                                笨笨笨笨球~~~~~~~~~~
-                                </p>
-                              </div>
+                          </div>
+                          <td>55</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input type="checkbox" class="filled-in" id="comment2" />
+                            <label for="comment2"></label>
+                          </td>
+                          <td>笨笨球(匿名)</td>
+                          <td>A1230</td>
+                          <td><a href="#">程式設計一</a></td>
+                          <td><a class="modal-trigger" href="#modal2">我是笨笨笨笨...</a></td>
+                          <div id="modal2" class="modal">
+                            <div class="modal-content">
+                              <p>我是笨笨笨<br>
+                              笨笨笨笨球~~~~~~~~~~
+                              </p>
                             </div>
-                            <td>55</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <input type="checkbox" class="filled-in" id="comment3" />
-                              <label for="comment3"></label>
-                            </td>
-                            <td>笨笨球</td>
-                            <td>I2600A</td>
-                            <td><a href="#">離散數學</a></td>
-                            <td><a class="modal-trigger" href="#modal3">還是笨笨笨笨...</a></td>
-                            <div id="modal3" class="modal">
-                              <div class="modal-content">
-                                <p>還是笨笨笨<br>
-                                笨笨笨笨球~~~~~~~~~~
-                                </p>
-                              </div>
+                          </div>
+                          <td>55</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input type="checkbox" class="filled-in" id="comment3" />
+                            <label for="comment3"></label>
+                          </td>
+                          <td>笨笨球</td>
+                          <td>I2600A</td>
+                          <td><a href="#">離散數學</a></td>
+                          <td><a class="modal-trigger" href="#modal3">還是笨笨笨笨...</a></td>
+                          <div id="modal3" class="modal">
+                            <div class="modal-content">
+                              <p>還是笨笨笨<br>
+                              笨笨笨笨球~~~~~~~~~~
+                              </p>
                             </div>
-                            <td>55</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <input type="hidden" name="_token" value="">
-                    </form>
-                  </div>
+                          </div>
+                          <td>55</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <input type="hidden" name="_token" value="">
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
