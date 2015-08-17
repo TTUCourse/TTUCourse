@@ -81,3 +81,7 @@ ul.collection > li {
 .dropdown-content {
   z-index: 999 !important;
 }
+
+.latest-comment {
+  word-wrap: break-word;
+}
