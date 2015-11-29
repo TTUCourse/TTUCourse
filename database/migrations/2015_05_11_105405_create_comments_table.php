@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration {
 			$table->string('content');
 			$table->integer('anonymous')->default(0);
 			$table->integer('rank')->default(0);
-			$table->timestamps();
+			$table->nullableTimestamps();
 			$table->softDeletes();
 		});
 	}

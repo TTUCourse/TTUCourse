@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('activate')->default(0);
 			$table->string('activate_code')->nullable();
 			$table->rememberToken();
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 
